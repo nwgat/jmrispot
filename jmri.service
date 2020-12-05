@@ -1,0 +1,9 @@
+[Unit]
+Description=jmrispot serviced
+After=multi-user.target ap.service
+
+[Service]
+ExecStart=su pi -c /home/pi/Downloads/JMRI/JmriFaceless
+
+[Install]
+WantedBy=multi-user.target

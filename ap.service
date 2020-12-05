@@ -1,0 +1,12 @@
+[Unit]
+Description=jmrispot wifi ap
+
+[Service]
+Type=simple
+ExecStart=create_ap --ieee80211n --no-virt -w 2 -c 6 --country no --isolate-clients -wmm_enabled=0 -wpa_group_rekey=43200 -n wlan0 jmrispot
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
